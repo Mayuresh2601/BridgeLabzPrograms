@@ -13,7 +13,7 @@ public class MergeSort {
 	public static void main(String[] args) throws IOException{
 		
 		Utility utility = new Utility();
-		String Path = "/home/admin0/Desktop/BridgeLabz/src/AlgorithmPrograms/Stringfile.txt";
+		String Path = "/home/admin1/string.txt";
 		File file = new File(Path);
 		
 		Scanner Scanner = new Scanner(new File(Path));

@@ -6,9 +6,9 @@ public class AddFirstLast {
 
 	public static void main(String[] args) {
 		int count = 0,rem=0,k=0,result=0;
-		Scanner sc = new Scanner(System.in);
+		Scanner Scanner = new Scanner(System.in);
 		System.out.println("Enter the Number: ");
-		int num = sc.nextInt();
+		int num = Scanner.nextInt();
 		
 		int og = num;
 		
@@ -31,8 +31,8 @@ public class AddFirstLast {
 				result = result + arr[i];
 			}
 		}
-		else {
-			for (int i = 0; i < count; i=i+2) {
+		else{
+			for (int i = 1; i < count; i=i+2) {
 				result = result + arr[i];
 			}
 		}

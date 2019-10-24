@@ -9,11 +9,11 @@ public class Harmonic {
 		
 		Scanner Scanner = new Scanner(System.in);
 		System.out.println("Enter the Limit: ");
-		int num = Scanner.nextInt();
+		int number = Scanner.nextInt();
 		
-		while(num >0) {
-			harmonic = harmonic + (double)1/num;
-			num--;
+		while(number >0) {
+			harmonic = harmonic + (double)1/number;
+			number--;
 		}
 		
 		System.out.println("The Value of The Harmonic Expression is: "+harmonic);

@@ -13,7 +13,7 @@ public class Binary {
 		System.out.println("Enter the Number: ");
 		int num = Scanner.nextInt();
 
-		utility.binary(num);
+		utility.toBinary(num);
 
 	}
 

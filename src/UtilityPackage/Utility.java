@@ -1,9 +1,17 @@
 package UtilityPackage;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import AlgorithmPrograms.RegEx;
 
 public class Utility {
 	
@@ -159,13 +167,18 @@ public class Utility {
 	
 	public static void toBinary(int number) {
 		
-		String temp = "";
+		int[] array = new int[8];
+		int c=0;
 		
 		while (number > 0) {
-			temp = temp + number%2 + " ";
-			number = number /2; 
+			array[c] = number%2;
+			number /= 10;
+			c++;
 		}
-		System.out.println(temp);
+		
+		for (int i : array) {
+			System.out.println(i);
+		}
 
 	}
 	
@@ -175,16 +188,16 @@ public class Utility {
 	 * @return return Swapping Nibbles
 	 */
 	
-	public static void binary(int number) {
+	public static void toDecimal(String binary) {
 		
-		int array[] = new int[8];
+		int array[] = new int[binary.length()];
 		int k = 0,j=4,temp=0,result=0;
 		
-		while(number > 0) {
-			array[k] = number%2;
-			number = number/2;
-			k++;
-		}
+//		while(binary != null) {
+//			array[k] = number%2;
+//			number = number/2;
+//			k++;
+//		}
 		
 		System.out.print("Before Swapping.......");
 		for (int i = 0; i < array.length; i++) {
@@ -411,28 +424,157 @@ public class Utility {
 	merge(array,input1,input2,mid,length-mid);
 	}
 
-	public static void merge(String[] array, String[] input1, String[] input2, int left, int right) {
+	public static void merge(String[] array, String[] Input1, String[] Input2, int left, int right) {
 		
 		int i=0,j=0,k=0;
 		while(i < left && j < right) {
-			if(array[i].compareTo(input1[j])<=0) {
-				array[k++] = input1[i++];
+			if(Input1[i].compareTo(Input2[j])< 0) {
+				array[k++] = Input1[i++];
 			}
 			else {
-				array[k++] = input2[j++];
+				array[k++] = Input2[j++];
 			}
 		}
 		
 		while (i < left) {
-			array[k++] = input2[i++];
+			array[k++] = Input1[i++];
 		}
 		
 		while (j < right) {
-			array[k++] = input2[j++];
+			array[k++] = Input2[j++];
 		}
 		
 		for (String string : array) {
 			System.out.println(string);
+		}
+	}
+	
+	/***********************************************************************/
+
+	/**
+	 * @return return Regex
+	 */
+	
+	public static String regEx(String str,String name) {
+		
+		String result = "";
+		
+		Pattern p = Pattern.compile("<<name>>");
+		Matcher match = p.matcher(str);
+		
+		while (match.find()) {
+			result = str.replace(p.pattern(), name);
+		}
+		return result;
+
+	}
+	
+	/***********************************************************************/
+
+	/**
+	 * @return return Bubble Sorting Using Generics
+	 */
+	
+	public static <E extends Comparable<E>> void bubbleSort(E[] array) {
+		E temp;
+		
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i+1; j < array.length; j++) {
+				if(array[i].compareTo(array[j]) >=0) {
+					temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+		
+		for (E e : array) {
+			System.out.print(e+ "  ");
+		}
+		System.out.println();
+	}
+	
+	/***********************************************************************/
+
+	/**
+	 * @return return Insertion Sorting using Generics
+	 */
+	
+	public static <E extends Comparable<E>> void insertionSort(E[] array) {
+		E temp;
+		
+		for (int i = 1; i < array.length; i++) {
+			temp = array[i];
+			int j = i-1;
+			while (j<=0 && array[j].compareTo(temp)>=0) {
+				array[j+1] = array[j];
+				j--;
+			}
+			array[j+1] = temp;
+		}
+		
+		for (E e : array) {
+			System.out.print(e+ "  ");
+		}
+		System.out.println();
+	}
+	
+	/***********************************************************************/
+
+	/**
+	 * @return return Merge Sorting Using Generics
+	 */
+	
+	public static <E> void mergeSort(E[] arr,Integer end) {
+		//extends Comparable<E>
+		int start = 0;
+		
+		if(end < 2) {
+			return;
+		}
+		int a[] =new int[4];
+		
+		
+		int mid = start +(end-start)/2;
+		E[] arr1 = new E[mid] ;
+		
+		E[] arr2 = null;
+		
+		for (int i = 0; i < mid; i++) {
+			arr1[i] = arr[i];
+		}
+		
+		for (int j = mid; j < arr.length; j++) {
+			arr2[j-mid] = arr[j];
+		}
+		
+		mergeSort(arr1, mid);
+		mergeSort(arr2, end-mid);
+		mergeGeneric(arr,arr1,arr2,mid,end-mid);
+	}
+
+	public static <E extends Comparable<E>> void mergeGeneric(E[] arr, E[] arr1, E[] arr2, int left, int right) {
+		int i=0,j=0,k=0;
+		
+		while (i < left && j < right) {
+			if(arr1[i].compareTo(arr2[j]) <0) {
+				arr[k++] = arr1[i++]; 
+			}
+			else {
+				arr[k++] = arr2[j++];
+			}
+		}
+		
+		while (i < left) {
+			arr[k++] = arr1[i++];
+		}
+		
+		while (j < right) {
+			arr[k++] = arr2[j++];
+		}
+		
+		for (E e : arr) {
+			System.out.println(e+ "  ");
 		}
 	}
 	

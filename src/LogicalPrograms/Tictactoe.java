@@ -17,6 +17,7 @@ public class Tictactoe {
 		}
 		
 		int count = 1;
+		try {
 		while(tictactoe) {
 			if(count%2==0) {
 				System.out.println("Player 1 Turn");
@@ -43,6 +44,10 @@ public class Tictactoe {
 					break;
 				}
 				
+				if (isDrawForPlayer()) {
+					System.out.println("Game is Draw");
+				}
+				
 				count++;
 			}
 			
@@ -66,6 +71,9 @@ public class Tictactoe {
 				}
 				count++;
 			}
+		}
+		}catch (Exception e) {
+			System.err.print("Enter the Proper Co-ordinates");
 		}
 	}
 
@@ -105,6 +113,48 @@ public class Tictactoe {
 		else {
 			return false;
 		}
+	}
+	
+	public static boolean isDrawForPlayer() {
+		
+		String x = "XXX";
+		String res1 = s.valueOf(board[0][0])+s.valueOf(board[0][1])+s.valueOf(board[0][2]);
+		String res2 = s.valueOf(board[1][0])+s.valueOf(board[1][1])+s.valueOf(board[1][2]);
+		String res3 = s.valueOf(board[2][0])+s.valueOf(board[2][1])+s.valueOf(board[2][2]);
+		String res4 = s.valueOf(board[0][0])+s.valueOf(board[1][0])+s.valueOf(board[2][0]);
+		String res5 = s.valueOf(board[0][1])+s.valueOf(board[1][1])+s.valueOf(board[2][1]);
+		String res6 = s.valueOf(board[0][2])+s.valueOf(board[1][2])+s.valueOf(board[2][2]);
+		String res7 = s.valueOf(board[0][0])+s.valueOf(board[1][1])+s.valueOf(board[2][2]);
+		String res8 = s.valueOf(board[0][2])+s.valueOf(board[1][1])+s.valueOf(board[2][0]);
+		
+		if(res1.compareTo(x)!=0 && res2.compareTo(x)!=0 && res3.compareTo(x)!=0 && res4.compareTo(x) !=0 && res5.compareTo(x) != 0 && res6.compareTo(x) != 0 && res7.compareTo(x) != 0 && res8.compareTo(x) != 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
+	}
+	
+	public static boolean isDrawForComputer() {
+		
+		String o = "OOO";
+		String res1 = s.valueOf(board[0][0])+s.valueOf(board[0][1])+s.valueOf(board[0][2]);
+		String res2 = s.valueOf(board[1][0])+s.valueOf(board[1][1])+s.valueOf(board[1][2]);
+		String res3 = s.valueOf(board[2][0])+s.valueOf(board[2][1])+s.valueOf(board[2][2]);
+		String res4 = s.valueOf(board[0][0])+s.valueOf(board[1][0])+s.valueOf(board[2][0]);
+		String res5 = s.valueOf(board[0][1])+s.valueOf(board[1][1])+s.valueOf(board[2][1]);
+		String res6 = s.valueOf(board[0][2])+s.valueOf(board[1][2])+s.valueOf(board[2][2]);
+		String res7 = s.valueOf(board[0][0])+s.valueOf(board[1][1])+s.valueOf(board[2][2]);
+		String res8 = s.valueOf(board[0][2])+s.valueOf(board[1][1])+s.valueOf(board[2][0]);
+		
+		if(res1.compareTo(o)!=0 && res2.compareTo(o)!=0 && res3.compareTo(o)!=0 && res4.compareTo(o) !=0 && res5.compareTo(o) != 0 && res6.compareTo(o) != 0 && res7.compareTo(o) != 0 && res8.compareTo(o) != 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
 	}
 
 }

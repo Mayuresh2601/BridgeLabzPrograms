@@ -20,16 +20,16 @@ public class VendingMaching {
 			
 			if(num >= arr[i]) {
 				quo = num / arr[i];
-//				ar1.add(quo);
-//				ar2.add(arr[i]);
+				ar1.add(quo);
+				ar2.add(arr[i]);
 				num = num % arr[i];
-				System.out.println(arr[i]+ "    "+quo);
+//				System.out.println(arr[i]+ "    "+quo);
 			}
 			
 		}
 		
-//		System.out.println("Count of the Notes are: "+ar1);
-//		System.out.println("Notes removed from Vending Machine are: "+ar2);
+		System.out.println("Count of the Notes are: "+ar1);
+		System.out.println("Notes removed from Vending Machine are: "+ar2);
 
 	}
 

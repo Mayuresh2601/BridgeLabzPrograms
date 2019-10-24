@@ -20,6 +20,8 @@ public class BinaryConvertion {
 		int num = Scanner.nextInt();
 		
 		utility.toBinary(num);
+		//System.out.println(binary);
+		//utility.toDecimal(binary);
 	}
 
 }
