@@ -1,6 +1,8 @@
 package AlgorithmPrograms;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class EgGeneric<T> {
 
@@ -15,16 +17,28 @@ public class EgGeneric<T> {
 
 	public <T> void mergeSort(T[] arr, Integer end) {
 		// extends Comparable<E>
+		Generics<T> g = new Generics<T>();
 		int start = 0;
 
 		if (end < 2) {
 			return;
 		}
-		int a[] = new int[4];
+		
 
 		Integer mid = start + (end - start) / 2;
-		T[] arr1 = (T[]) Array.newInstance(type, mid);
-
+		T[] arr1 = (T[]) Array.newInstance(g.type, mid);
+		ArrayList<T> al = new ArrayList<T>();
+		Iterator itr = al.iterator();
+		
+		T temp;
+		while (itr.hasNext()) {
+			for (int i = 0; i < mid; i++) {
+				Object T = arr[i];
+				al.add((T) T);
+			}
+			
+		}
+		
 		T[] arr2 = null;
 
 		for (int i = 0; i < mid; i++) {

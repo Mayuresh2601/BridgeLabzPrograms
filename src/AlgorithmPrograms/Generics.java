@@ -1,22 +1,25 @@
 package AlgorithmPrograms;
 
 import java.awt.List;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
 import UtilityPackage.Utility;
+import UtilityPackage.UtilityGeneric;
 
-public class Generics<E> {
-	
-	private E[] arr;
-	private int length;
+public class Generics<T> extends Utility{
 
-	public Generics(Class<E> type, int length) {
-		// Creates a new array with the specified type and length at runtime
-		this.arr = (E[]) java.lang.reflect.Array.newInstance(type, length);
-		this.length = length;
-	}
+	Class<T> type;
+//	private E[] arr;
+//	private int length;
+//
+//	public Generics(Class<E> type, int length) {
+//		// Creates a new array with the specified type and length at runtime
+//		this.arr = (E[]) java.lang.reflect.Array.newInstance(type, length);
+//		this.length = length;
+//	}
 	
 	public static void main(String[] args) {
 		
@@ -28,7 +31,6 @@ public class Generics<E> {
 		
 		System.out.println("Performed By BubbleSort: ");
 		utility.bubbleSort(array);
-		utility.bubbleSort(str);
 		System.out.println();
 		
 		System.out.println("Performed By InsertionSort: ");
