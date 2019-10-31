@@ -1,13 +1,11 @@
 package AlgorithmPrograms;
 
-import java.awt.List;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
 
 import UtilityPackage.Utility;
-import UtilityPackage.UtilityGeneric;
 
 public class Generics<T> extends Utility{
 

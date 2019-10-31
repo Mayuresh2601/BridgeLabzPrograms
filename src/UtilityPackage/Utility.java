@@ -528,60 +528,60 @@ public class Utility {
 	 * @return return Merge Sorting Using Generics
 	 */
 	
-//	public static <T> void mergeSort(T[] arr,Integer end) {
-//		//extends Comparable<E>
-//		
-//		Generics<T> gen = new Generics<T>();
-//		int start = 0;
-//		
-//		if(end < 2) {
-//			return;
-//		}
-//		int a[] =new int[4];
-//		
-//		
-//		int mid = start +(end-start)/2;
-//		T[] arr1 = (T[]) Array.newInstance(gen.type, mid);
-//		
-//		T[] arr2 = null;
-//		
-//		for (int i = 0; i < mid; i++) {
-//			arr1[i] = arr[i];
-//		}
-//		
-//		for (int j = mid; j < arr.length; j++) {
-//			arr2[j-mid] = arr[j];
-//		}
-//		
-//		mergeSort(arr1, mid);
-//		mergeSort(arr2, end-mid);
-//		mergeGeneric(arr,arr1,arr2,mid,end-mid);
-//	}
-//
-//	public static <T extends Comparable<T>> void mergeGeneric(T[] arr, T[] arr1, T[] arr2, int left, int right) {
-//		int i=0,j=0,k=0;
-//		
-//		while (i < left && j < right) {
-//			if(arr1[i].compareTo(arr2[j]) <0) {
-//				arr[k++] = arr1[i++]; 
-//			}
-//			else {
-//				arr[k++] = arr2[j++];
-//			}
-//		}
-//		
-//		while (i < left) {
-//			arr[k++] = arr1[i++];
-//		}
-//		
-//		while (j < right) {
-//			arr[k++] = arr2[j++];
-//		}
-//		
-//		for (T e : arr) {
-//			System.out.println(e+ "  ");
-//		}
-//	}
+	public static <T> void mergeSort(T[] arr,Integer end) {
+		//extends Comparable<E>
+		
+		Generics<T> gen = new Generics<T>();
+		int start = 0;
+		
+		if(end < 2) {
+			return;
+		}
+		int a[] =new int[4];
+		
+		
+		int mid = start +(end-start)/2;
+		T[] arr1 = (T[]) Array.newInstance(gen.type, mid);
+		
+		T[] arr2 = null;
+		
+		for (int i = 0; i < mid; i++) {
+			arr1[i] = arr[i];
+		}
+		
+		for (int j = mid; j < arr.length; j++) {
+			arr2[j-mid] = arr[j];
+		}
+		
+		mergeSort(arr1, mid);
+		mergeSort(arr2, end-mid);
+		mergeGeneric(arr,arr1,arr2,mid,end-mid);
+	}
+
+	public static <T extends Comparable<T>> void mergeGeneric(T[] arr, T[] arr1, T[] arr2, int left, int right) {
+		int i=0,j=0,k=0;
+		
+		while (i < left && j < right) {
+			if(arr1[i].compareTo(arr2[j]) <0) {
+				arr[k++] = arr1[i++]; 
+			}
+			else {
+				arr[k++] = arr2[j++];
+			}
+		}
+		
+		while (i < left) {
+			arr[k++] = arr1[i++];
+		}
+		
+		while (j < right) {
+			arr[k++] = arr2[j++];
+		}
+		
+		for (T e : arr) {
+			System.out.println(e+ "  ");
+		}
+	}
 	
 	/*****************************DataStructure Programs*******************************************/
 	/******************************************************************************************/

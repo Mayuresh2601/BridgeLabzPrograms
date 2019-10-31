@@ -1,4 +1,4 @@
-package demo;
+package DataStructure;
 
 import java.util.Scanner;
 
@@ -86,8 +86,6 @@ public class Paranthesis {
 	else {
 		System.out.println("The Expression "+ str +" is Not Balanced");
 	}
-//	p.push(23);
-//	p.push(1);
 	
 
 	}
