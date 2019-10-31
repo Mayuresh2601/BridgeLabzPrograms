@@ -11,14 +11,6 @@ import UtilityPackage.UtilityGeneric;
 public class Generics<T> extends Utility{
 
 	Class<T> type;
-//	private E[] arr;
-//	private int length;
-//
-//	public Generics(Class<E> type, int length) {
-//		// Creates a new array with the specified type and length at runtime
-//		this.arr = (E[]) java.lang.reflect.Array.newInstance(type, length);
-//		this.length = length;
-//	}
 	
 	public static void main(String[] args) {
 		
@@ -38,7 +30,7 @@ public class Generics<T> extends Utility{
 		
 		System.out.println("Performed By MergeSort: ");
 		Integer length = array.length-1;
-		utilityGre.mergeSort(array, length);
+		utilityGen.mergeSort(array, length);
 	}
 
 }
