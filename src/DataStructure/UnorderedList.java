@@ -1,7 +1,6 @@
 package DataStructure;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -63,11 +62,10 @@ public class UnorderedList<T> {
 
 	public static void main(String[] args) throws IOException{
 		
-		
 		UnorderedList unorder = new UnorderedList();
-		String Path = "/home/admin1/Desktop/String.txt";
-		File file = new File(Path);
 		
+		String Path = "/home/admin1/Desktop/String.txt";
+	
 		BufferedReader br = new BufferedReader(new FileReader(Path));
 		
 		String str="";
@@ -82,7 +80,7 @@ public class UnorderedList<T> {
 		String key = scan.nextLine();
 	
 		boolean  status = unorder.search(key);
-		if(status == true) {
+		if(status==true) {
 			System.out.println("Element is Present");
 			
 		}
@@ -93,8 +91,8 @@ public class UnorderedList<T> {
 			//unorder.display();
 		}
 		
-		
-		//utility.unOrderList(arraylist, key);
+
+		//utilityGen.unOrderList(arraylist, key);
 	}
 
 }

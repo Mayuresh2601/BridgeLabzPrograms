@@ -1,20 +1,11 @@
 package UtilityPackage;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import AlgorithmPrograms.Generics;
-import AlgorithmPrograms.RegEx;
-import DataStructure.UnorderedList.T;
-
 
 public class Utility {
 	
@@ -48,6 +39,26 @@ public class Utility {
 	public double readDouble()
 	{
 		return sc.nextDouble();
+	}
+	
+	/***********************************************************************/
+
+	/**
+	 * @return return Float input
+	 */
+	public double readFloat()
+	{
+		return sc.nextFloat();
+	}
+	
+	/***********************************************************************/
+
+	/**
+	 * @return return Long input
+	 */
+	public double readLong()
+	{
+		return sc.nextLong();
 	}
 	/*****************************Logical Programs*******************************************/
 	/******************************************************************************************/
@@ -471,196 +482,4 @@ public class Utility {
 		return result;
 
 	}
-	
-	/***********************************************************************/
-
-	/**
-	 * @return return Bubble Sorting Using Generics
-	 */
-	
-	public static <T extends Comparable<T>> void bubbleSort(T[] array) {
-		T temp;
-		
-		for (int i = 0; i < array.length; i++) {
-			for (int j = i+1; j < array.length; j++) {
-				if(array[i].compareTo(array[j]) >=0) {
-					temp = array[i];
-					array[i] = array[j];
-					array[j] = temp;
-				}
-			}
-		}
-		
-		for (T e : array) {
-			System.out.print(e+ "  ");
-		}
-		System.out.println();
-	}
-	
-	/***********************************************************************/
-
-	/**
-	 * @return return Insertion Sorting using Generics
-	 */
-	
-	public static <T extends Comparable<T>> void insertionSort(T[] array) {
-		T temp;
-		
-		for (int i = 1; i < array.length; i++) {
-			temp = array[i];
-			int j = i-1;
-			while (j<=0 && array[j].compareTo(temp)>=0) {
-				array[j+1] = array[j];
-				j--;
-			}
-			array[j+1] = temp;
-		}
-		
-		for (T e : array) {
-			System.out.print(e+ "  ");
-		}
-		System.out.println();
-	}
-	
-	/***********************************************************************/
-
-	/**
-	 * @return return Merge Sorting Using Generics
-	 */
-	
-	public static <T> void mergeSort(T[] arr,Integer end) {
-		//extends Comparable<E>
-		
-		Generics<T> gen = new Generics<T>();
-		int start = 0;
-		
-		if(end < 2) {
-			return;
-		}
-		int a[] =new int[4];
-		
-		
-		int mid = start +(end-start)/2;
-		T[] arr1 = (T[]) Array.newInstance(gen.type, mid);
-		
-		T[] arr2 = null;
-		
-		for (int i = 0; i < mid; i++) {
-			arr1[i] = arr[i];
-		}
-		
-		for (int j = mid; j < arr.length; j++) {
-			arr2[j-mid] = arr[j];
-		}
-		
-		mergeSort(arr1, mid);
-		mergeSort(arr2, end-mid);
-		mergeGeneric(arr,arr1,arr2,mid,end-mid);
-	}
-
-	public static <T extends Comparable<T>> void mergeGeneric(T[] arr, T[] arr1, T[] arr2, int left, int right) {
-		int i=0,j=0,k=0;
-		
-		while (i < left && j < right) {
-			if(arr1[i].compareTo(arr2[j]) <0) {
-				arr[k++] = arr1[i++]; 
-			}
-			else {
-				arr[k++] = arr2[j++];
-			}
-		}
-		
-		while (i < left) {
-			arr[k++] = arr1[i++];
-		}
-		
-		while (j < right) {
-			arr[k++] = arr2[j++];
-		}
-		
-		for (T e : arr) {
-			System.out.println(e+ "  ");
-		}
-	}
-	
-	/*****************************DataStructure Programs*******************************************/
-	/******************************************************************************************/
-			/**
-			 * @author Mayuresh Sunil Sonar
-			 * @Modified on  26-10-2019
-			 * @Purpose :-Data Structure Programs
-			 */ 
-	
-	/***********************************************************************/
-	
-	/***********************************************************************/
-
-	/**
-	 * @return return Unorder List using Bubble sort to compare Element
-	 */
-	
-	private T head = null;
-	
-	public class T{
-		private T value;
-		private T next;
-	}
-	
-
-	public static <T extends Comparable<T>>void add(T item) {
-//		T node = new T();
-//		node.value = item;
-//		node.next = null;
-//		
-//		if(head == null) {
-//			head = node;
-//		}
-//		else {
-//			node.next = head;
-//			head = node;
-//		}
-//		
-//		while (node.next != null) {
-//			System.out.println(node.value+ "  ");
-//		}
-		
-		T head=null;
-		T next = null;
-		if(head == null) {
-			head = item;
-			next = null;
-		}
-		if(head != null) {
-			System.out.println(head+ "  ");
-		}
-		
-	}
-	public static <T extends Comparable<T>> void unOrderList(ArrayList<T> arraylist,Object key) {
-		
-		boolean present = false;
-		for (int i = 0; i < arraylist.size(); i++) {
-			if (arraylist.get(i).compareTo((T) key)==0) {
-				System.out.println("Element is Present");
-				present = true;
-			}
-		}
-		
-		for (int i = 0; i < arraylist.size(); i++) {
-			if(arraylist.get(i).compareTo((T) key) !=0) {
-				System.out.println("Element Not Present");
-				present = false;
-			}
-		}
-		
-		if(present==true) {
-			arraylist.add((T) key);
-		}
-		
-		for (Object t : arraylist) {
-			System.out.println(t+ " ");
-		}
-		
-		
-	}
-	
 }
