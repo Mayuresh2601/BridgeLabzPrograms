@@ -1,8 +1,12 @@
 package UtilityPackage;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -115,66 +119,7 @@ public class UtilityGeneric {
 		System.out.println();
 	}
 	
-	/***********************************************************************/
 
-	/**
-	 * @return return Merge Sorting Using Generics
-	 */
-	
-	public static <T> void mergeSort(T[] arr,Integer end) {
-		//extends Comparable<E>
-		
-		Generics<T> gen = new Generics<T>();
-		int start = 0;
-		
-		if(end < 2) {
-			return;
-		}
-		int a[] =new int[4];
-		
-		
-		int mid = start +(end-start)/2;
-		T[] arr1 = (T[]) Array.newInstance(gen.type, mid);
-		
-		T[] arr2 = null;
-		
-		for (int i = 0; i < mid; i++) {
-			arr1[i] = arr[i];
-		}
-		
-		for (int j = mid; j < arr.length; j++) {
-			arr2[j-mid] = arr[j];
-		}
-		
-		mergeSort(arr1, mid);
-		mergeSort(arr2, end-mid);
-		mergeGeneric(arr,arr1,arr2,mid,end-mid);
-	}
-
-	public static <T extends Comparable<T>> void mergeGeneric(T[] arr, T[] arr1, T[] arr2, int left, int right) {
-		int i=0,j=0,k=0;
-		
-		while (i < left && j < right) {
-			if(arr1[i].compareTo(arr2[j]) <0) {
-				arr[k++] = arr1[i++]; 
-			}
-			else {
-				arr[k++] = arr2[j++];
-			}
-		}
-		
-		while (i < left) {
-			arr[k++] = arr1[i++];
-		}
-		
-		while (j < right) {
-			arr[k++] = arr2[j++];
-		}
-		
-		for (T e : arr) {
-			System.out.println(e+ "  ");
-		}
-	}
 	
 	/*****************************DataStructure Programs*******************************************/
 	/******************************************************************************************/
@@ -245,49 +190,6 @@ public class UtilityGeneric {
 
 		
 
-		
-	public boolean search(ArrayList<E>int key) {	
-	Node z = head;		
-	while (z != null) {
-		if(z.value.equals(key)) {
-			return true;
-		}
-		else {
-			z = z.next;
-		}
-	}
-	return false;
-	}
-		
-	public void display() {
-			
-		for (Node z = head; z != null; z=z.next) {
-			System.out.print(z.value + "  ");
-		}
-	}
-	
-	public static <T extends Comparable<T>>void sortList() {
-		Node current = head;
-		Node index = current.next;
-		int temp;
-		
-		if(head == null) {
-			return;
-		}
-		else {
-			 
-			while (index != null) {
-				if (current.value > index.value) {
-					temp = current.value;
-					current.value = index.value;
-					index.value = temp;
-				}
-				index = index.next;
-			}
-			current = current.next;
-		}
-	}
-	
 	/***********************************************************************/
 
 	/**
@@ -419,11 +321,20 @@ public class UtilityGeneric {
             } 
             System.out.println(); 
         }
-		String Path = "/home/admin1/Desktop/updatehashing.txt";
-		FileOutputStream file = new FileOutputStream(Path);
-		ObjectOutputStream oos = new ObjectOutputStream(file);
-		
-		oos.writeObject(aList);
+//		String Path = "/home/admin1/Desktop/hashing.txt";
+//		FileOutputStream file = new FileOutputStream(Path);
+//		ObjectOutputStream oos = new ObjectOutputStream(file);
+//		PrintWriter pw = new PrintWriter(Path);
+//		pw.print("");
+//		BufferedWriter writer = new BufferedWriter(new FileWriter(Path,true));
+//		
+//		Iterator itr = aList.iterator();
+//		String temp="";
+//		while (itr.hasNext()) {
+//			temp = (String)itr.next();
+//			writer.write(temp);
+//		}
+
 	}
 	
 	

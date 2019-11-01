@@ -132,11 +132,11 @@ public class SingleLinkedList<T> {
 		s.insertAtBegin(1);
 		s.insertAtPosition(99, 3);
 		s.insertAtPosition(42, 1);
-//		s.deleteAtEnd();
-//		s.deleteAtBegin();
-//		s.deleteAtMid();
-//		s.deleteAtMid();
-//		s.deleteAtMid();
+		s.deleteAtEnd();
+		s.deleteAtBegin();
+		s.deleteAtMid();
+		s.deleteAtMid();
+		s.deleteAtMid();
 		
 		s.display();
 

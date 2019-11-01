@@ -18,19 +18,17 @@ public class Generics<T> extends Utility{
 		
 		Integer[] array = {345,78,6786,412,342,354565,4645,67,46,3542,354,25};
 		
-		String[] str = {"wef","yukj","gfhb","wqer","few","dhf","kj"};
+		String[] str = {"Hello","Mayuresh","How","Are","You","Hope","You","Do","Well","In","Your","Studies"};
 		
 		System.out.println("Performed By BubbleSort: ");
 		utilityGen.bubbleSort(array);
+		utilityGen.bubbleSort(str);
 		System.out.println();
 		
 		System.out.println("Performed By InsertionSort: ");
 		utilityGen.insertionSort(array);
 		utilityGen.insertionSort(str);
 		
-		System.out.println("Performed By MergeSort: ");
-		Integer length = array.length-1;
-		utilityGen.mergeSort(array, length);
 	}
 
 }

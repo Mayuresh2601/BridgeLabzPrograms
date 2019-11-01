@@ -34,7 +34,7 @@ public class DoubleLinkedList<T> {
 		node.prev = null;
 
 		
-		
+	
 	}
 	
 	public void insertAtEnd(T item) {

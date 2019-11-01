@@ -11,7 +11,7 @@ public class Hashing {
 
 	public static void main(String[] args) throws IOException{
 		UtilityGeneric utilityGen = new UtilityGeneric();
-		String Path = "/home/admin1/Desktop/hashing.txt";
+		String Path = "/home/admin1/Desktop/BridgeLabz/src/DataStructure/hashing.txt";
 	
 		File file = new File(Path);
 		Scanner scanner = new Scanner(new File(Path));
@@ -23,10 +23,12 @@ public class Hashing {
 			n = scanner.nextInt();
 			element.add(n);
 		}
+		
+		System.out.println(element);
+		
 		System.out.println("Enter The Number to Search in the List");
 		int number = utilityGen.readInteger();
 		utilityGen.hashing(number,element);
-		
 		
 	}
 

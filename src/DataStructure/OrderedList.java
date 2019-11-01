@@ -85,7 +85,7 @@ public class OrderedList{
 		
 		OrderedList o = new OrderedList();
 		Utility utility = new Utility();
-		String Path = "/home/admin1/Desktop/Integer.txt";
+		String Path = "/home/admin1/Desktop/BridgeLabz/src/DataStructure/Integer.txt";
 		File file = new File(Path);
 		Scanner scanner = new Scanner(new File(Path));
 		

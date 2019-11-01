@@ -64,7 +64,7 @@ public class UnorderedList<T> {
 		
 		UnorderedList unorder = new UnorderedList();
 		
-		String Path = "/home/admin1/Desktop/String.txt";
+		String Path = "/home/admin1/Desktop/BridgeLabz/src/DataStructure/String.txt";
 	
 		BufferedReader br = new BufferedReader(new FileReader(Path));
 		
