@@ -36,9 +36,9 @@ public class PrimeNumber2D {
 
 		// for 2D Array.
 		int x = 0;
-		for(int i=0; i<10; i++)
+		for(int i=0; i<m; i++)
 		{
-			for(int j=0; j<q; j++)
+			for(int j=0; j<n; j++)
 			{
 				array2d[i][j] = array1d[x];
 				x++;
@@ -47,9 +47,9 @@ public class PrimeNumber2D {
 
 		// printing the result in 2D Array.
 		System.out.println("The Final Array is : ");
-		for(int i=0; i<10; i++)
+		for(int i=0; i<m; i++)
 		{
-			for(int j=0; num < 100; j++)
+			for(int j=0; j < n; j++)
 			{
 
 					System.out.print(array2d[i][j]+"  ");
