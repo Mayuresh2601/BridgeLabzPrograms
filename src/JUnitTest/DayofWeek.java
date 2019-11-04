@@ -10,10 +10,9 @@ public class DayofWeek {
 		int x=0;
 		Scanner sc = new Scanner(System.in);
 		
+		//Taking Command Line Arguments
 		int day = Integer.parseInt(args[0]);
-		
 		int month = Integer.parseInt(args[1]);
-		
 		int year = Integer.parseInt(args[2]);
 		
 		y0=year-(14-month)/12;

@@ -1,6 +1,5 @@
 package DataStructure;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -81,43 +80,48 @@ public class OrderedList{
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
+public static void main(String[] args) throws IOException {
 		
-		OrderedList o = new OrderedList();
+		OrderedList orderedlist = new OrderedList();
 		Utility utility = new Utility();
-		String Path = "/home/admin1/Desktop/BridgeLabz/src/DataStructure/Integer.txt";
+		
+		//Path of File to read from it
+		String Path = "C:\\Users\\Home\\eclipse-workspace\\BridgeLabzProgram\\src\\com\\DataStructure\\Integer.txt";
 		File file = new File(Path);
 		Scanner scanner = new Scanner(new File(Path));
 		
+		//Adding data of file into LinkedList
 		while (scanner.hasNext()) {
-			o.add(scanner.nextInt());
+			orderedlist.add(scanner.nextInt());
 		}
 		
 		System.out.println("Before Swapping");
-		o.display();
+		orderedlist.display();
 		System.out.println();
+		
 		System.out.println("After Swapping");
-		o.sortList(o.head);
-		o.display();
+		orderedlist.sortList(orderedlist.head);
+		orderedlist.display();
 		System.out.println();
 		
 		System.out.println("Enter The Number to search in list");
 		int key = utility.readInteger();
 		
-		boolean status = o.search(o.head,key);
+		boolean status = orderedlist.search(orderedlist.head,key);
 		
+		//Searching Element in the List
 		if(status == true) {
 			System.out.println("Element Present");
-			o.remove(key);
-			o.display();
+			orderedlist.remove(key);
+			orderedlist.display();
 			System.out.println();
 			System.out.println("Element Deleted Successfully...");
 		}
 		else {
 			System.out.println("Element Not Present");
-			o.add(key);
-			o.sortList(o.head);
-			o.display();
+			orderedlist.add(key);
+			orderedlist.sortList(orderedlist.head);
+			orderedlist.display();
 			System.out.println();
 			System.out.println("Element Inserted Successfully...");
 		}

@@ -1,12 +1,11 @@
 package LogicalPrograms;
 
-import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class CouponNumber {
 
 	public static void main(String[] args) {
-		// To Print 10 CouponCode with Random Numbers
+		/* To Print 10 CouponCode with Random Numbers */
 		Scanner sc = new Scanner(System.in);
 		String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		char[] ch = str.toCharArray();
@@ -20,7 +19,6 @@ public class CouponNumber {
 		while(random > 0) {
 			sb.append(ch[random%ch.length]);
 			random = random/ch.length;
-	
 		}
 		
 		String couponcode = sb.toString();

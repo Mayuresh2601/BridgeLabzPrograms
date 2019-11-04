@@ -10,6 +10,7 @@ public class PowerOf2 {
 		System.out.println("Enter the Nth value Between 0 - 30: ");
 		int number = Scanner.nextInt();
 		
+		//Number should be less than 30 to perform Power of 2
 		if(number <= 30) {
 			for (int i = 0; i <= number; i++) {
 				int result = (int) Math.pow(2, i);

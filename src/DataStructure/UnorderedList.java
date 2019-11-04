@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import UtilityPackage.Utility;
+
 public class UnorderedList<T> {
 	
  Node head = null;
@@ -60,24 +62,25 @@ public class UnorderedList<T> {
 
 	}
 
-	public static void main(String[] args) throws IOException{
+public static void main(String[] args) throws IOException{
 		
 		UnorderedList unorder = new UnorderedList();
+		Utility utility = new Utility();
 		
-		String Path = "/home/admin1/Desktop/BridgeLabz/src/DataStructure/String.txt";
-	
+		//Path of File to read from it
+		String Path = "C:\\Users\\Home\\eclipse-workspace\\BridgeLabzProgram\\src\\com\\DataStructure\\String.txt";
 		BufferedReader br = new BufferedReader(new FileReader(Path));
-		
 		String str="";
+		
+		//Adding data of file into LinkedList
 		while((str = br.readLine())!=null) {
 			unorder.add(str);
 		}
 		
 		unorder.display();
 		
-		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the Element to Search in the File: ");
-		String key = scan.nextLine();
+		String key = utility.readString();
 	
 		boolean  status = unorder.search(key);
 		if(status==true) {

@@ -12,6 +12,8 @@ public class FlipCoin {
 		int tail=0,head=0;
 		
 		for (int i = 0; i < num; i++) {
+			
+			// Generate Random Number Between 0 and 1
 			float random = (float) (Math.random());
 			
 			if(random <0.5) {
@@ -22,6 +24,7 @@ public class FlipCoin {
 			}
 		}
 		
+		//Calculate Percentage of Number of Tails and Heads
 		int tailperc = tail*100/num;
 		int headperc = head*100/num;
 		

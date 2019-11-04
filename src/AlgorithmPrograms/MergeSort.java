@@ -13,7 +13,8 @@ public class MergeSort {
 	public static void main(String[] args) throws IOException{
 		
 		Utility utility = new Utility();
-		String Path = "/home/admin1/string.txt";
+		//Path of File to read from it
+		String Path = "/home/admin1/Desktop/BridgeLabz/src/AlgorithmPrograms/Stringfile.txt";
 		File file = new File(Path);
 		
 		Scanner Scanner = new Scanner(new File(Path));
@@ -21,6 +22,7 @@ public class MergeSort {
 		ArrayList<String> arraylist = new ArrayList<String>();
 		
 		String temp="";
+		//Adding data of file into ArrayList
 		while (Scanner.hasNext()) {
 			temp = Scanner.next();
 			arraylist.add(temp);
@@ -28,9 +30,9 @@ public class MergeSort {
 		
 		int k=0;
 		String[] array = new String[arraylist.size()];
-		
 		Iterator iterator = arraylist.iterator();
 		
+		//Traversing the ArrayList using iterator to store the data in Array
 		while (iterator.hasNext()) {
 			array[k] = (String) iterator.next();
 			k++;
@@ -38,6 +40,7 @@ public class MergeSort {
 		
 		int length = array.length;
 		
+		//Calling Utility Package
 		utility.sortMerge(array, length);
 		
 	}

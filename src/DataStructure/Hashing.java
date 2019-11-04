@@ -11,23 +11,29 @@ public class Hashing {
 
 	public static void main(String[] args) throws IOException{
 		UtilityGeneric utilityGen = new UtilityGeneric();
-		String Path = "/home/admin1/Desktop/BridgeLabz/src/DataStructure/hashing.txt";
-	
+		
+		//Path of File to read from it
+		String Path = "C:\\Users\\Home\\eclipse-workspace\\BridgeLabzProgram\\src\\com\\DataStructure\\hashing.txt";
 		File file = new File(Path);
+		
 		Scanner scanner = new Scanner(new File(Path));
 		
 		ArrayList<Integer> element = new ArrayList<Integer>();
+		int temp=0;
 		
-		int n=0;
+		//Adding data of file into ArrayList
 		while(scanner.hasNext()) {
-			n = scanner.nextInt();
-			element.add(n);
+			temp = scanner.nextInt();
+			element.add(temp);
 		}
 		
+		//Print the Element present in the file
 		System.out.println(element);
 		
 		System.out.println("Enter The Number to Search in the List");
 		int number = utilityGen.readInteger();
+		
+		//Calling Utility Package
 		utilityGen.hashing(number,element);
 		
 	}

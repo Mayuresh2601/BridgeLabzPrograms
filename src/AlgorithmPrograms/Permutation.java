@@ -6,7 +6,7 @@ import UtilityPackage.Utility;
 
 public class Permutation {
 
-	/*  Permutation of Each String Element Method*/
+	/*  Permutation of Each String Element Method */
 	public static void recursivePermutation(String str, String ans) {
 		
 		if(str.length() <1) {
@@ -28,10 +28,6 @@ public class Permutation {
 		String str = Scanner.next();
 		String ans = "";
 		recursivePermutation(str, ans);
-		
-		//int fact = str.length();
-		//utility.iterativePermutation(str,fact);
-		
 	
 	}
 

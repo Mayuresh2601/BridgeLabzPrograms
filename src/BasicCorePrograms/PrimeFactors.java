@@ -12,13 +12,13 @@ public class PrimeFactors {
 		
 		System.out.println("The Prime Factors are: ");
 		for (int i =2; i <= number; i++) {
+			
+			//Prime Factor of the Number
 			while(number % i ==0) {
 				System.out.println(i);
 				number = number / i;
 			}
-			
 		}
 
 	}
-
 }

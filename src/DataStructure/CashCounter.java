@@ -2,6 +2,10 @@ package DataStructure;
 
 import java.util.Scanner;
 
+import UtilityPackage.Utility;
+
+
+
 public class CashCounter {
 
 	private int size;
@@ -66,38 +70,45 @@ public class CashCounter {
 		}
 	}
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
+		Utility utility = new Utility();
 		System.out.println("Enter the Number of People In Queue:");
-		int num = sc.nextInt();
+		int num = utility.readInteger();
+		
 		CashCounter cc = new CashCounter(num);
+		
 		int people[] = new int[cc.size];
 		int balance[] = new int[cc.size];
+		
 		int money=0,withdraw=0,deposit=0,c=0;
 		
 		System.out.println("Enter the Money of the people in queue:");
+		//Define the Money of Each Person in Queue
 		for (int i = 0; i < cc.size; i++) {
-			money = sc.nextInt();
+			money = utility.readInteger();
 			people[i] = money;
 			cc.Enqueue(people[i]);
 		}
 		
+		//Traverse till the end of Queue
 		for (int i = 0; i < cc.size; i++) {
-			do {
+			
+			do {  //If Person Choose Invalid choice He can try the Process Again
 				System.out.println("Person "+(i+1)+": Choose 1 for Withdraw or 2 for Deposit The Money");
-				c = sc.nextInt();
+				c = utility.readInteger();
 				switch(c) {
 				case 1:
-					do {
+					do {  //If In case Insufficient amount in balance then person can try another amount
 						System.out.println("Enter the Money in Rs. to Withdraw from your bank");
-						withdraw = sc.nextInt();
+						withdraw = utility.readInteger();
 						if(people[i] < withdraw) {
 							System.out.println("You have Insufficient Balance in your account. Please Try Again ");
 						}
 						else {
 							people[i] = people[i] - withdraw;
 							System.out.println("After withdraw the total amount of "+(i+1)+" Person is: "+ people[i]);
+							System.out.println();
 						}
 					}
 					while(people[i] < withdraw);
@@ -107,15 +118,16 @@ public class CashCounter {
 				
 				case 2:
 					System.out.println("Enter the Money in Rs. to Deposit in your bank");
-					deposit = sc.nextInt();
+					deposit = utility.readInteger();
 			
 					people[i] = people[i] + deposit;
 					System.out.println("After Deposit the total amount of "+(i+1)+" Person is: "+ people[i]);
 					balance[i] = people[i];
+					System.out.println();
 					break;
 				
 				default: 
-					System.out.println("invalid Choice..");
+					System.out.println("Invalid Choice.. Please Enter the Valid Choice");
 					break;
 				}
 			}

@@ -1,20 +1,20 @@
 package DataStructure;
 
-public class Stack<T extends Object> {
+public class GenericStack<T extends Object> {
 
 	private int size;
 	private int top;
 	private int length;
 	private T[] stack;
 	
-	public Stack() {
+	public GenericStack() {
 		size = 50;
 		top = -1;
 		length = 0;
 		stack = (T[])new Object[size];
 	}
 	
-	public Stack(int size) {
+	public GenericStack(int size) {
 		this.size = size;
 		top = -1;
 		length = 0;
@@ -74,7 +74,7 @@ public class Stack<T extends Object> {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Stack stack = new Stack(12);
+		GenericStack stack = new GenericStack(12);
 		stack.push(12);
 		stack.push(23);
 		stack.push(32);

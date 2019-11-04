@@ -12,7 +12,7 @@ public class Anagram {
 		System.out.println("Enter Second String");
 		String Input2 = Scanner.next().toLowerCase().replace(" ", "");
 	
-		
+		// Check String is Anagram or Not
 		if(isAnagram(Input1,Input2)) {
 			System.out.println("It is Anagram");
 		}
@@ -23,6 +23,7 @@ public class Anagram {
 	
 	public static boolean isAnagram(String Input1,String Input2) {
 		
+		// Return false is length of both string is not equal
 		if(Input1.length() != Input2.length()) {
 			return false;
 		}

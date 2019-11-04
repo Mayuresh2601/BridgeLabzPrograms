@@ -1,13 +1,13 @@
 package DataStructure;
 
-public class Queue<T extends Object> {
+public class GenericQueue<T extends Object> {
 	private int front;
 	private int rear;
 	private int length;
 	private int size;
 	private T[] queue;
 	
-	public Queue() {
+	public GenericQueue() {
 		front = 0;
 		rear = 0;
 		length=0;
@@ -15,7 +15,7 @@ public class Queue<T extends Object> {
 		queue = (T[]) new Object[size];
 	}
 	
-	public Queue(int size) {
+	public GenericQueue(int size) {
 		front = 0;
 		rear = 0;
 		length = 0;
@@ -80,7 +80,7 @@ public class Queue<T extends Object> {
 	}
 
 	public static void main(String[] args) throws Exception{
-		Queue queue = new Queue(12);
+		GenericQueue queue = new GenericQueue(12);
 		queue.enQueue(20);
 		queue.enQueue(10);
 		queue.enQueue("Mayuresh");

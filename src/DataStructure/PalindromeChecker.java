@@ -67,26 +67,29 @@ public class PalindromeChecker {
 		}
 	}
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
 		Utility utility = new Utility();
 		String result="";
 		System.out.println("Enter the String");
-		String input = utility.readString();
+		String Input = utility.readString();
 		PalindromeChecker palindrome = new PalindromeChecker();
 		
-		char[] ch1 = input.toLowerCase().toCharArray();
+		char[] ch1 = Input.toLowerCase().toCharArray();
 		char[] ch2 = new char[ch1.length];
+		
+		//Enqueue All Element in the Queue
 		for (int i = 0; i < ch1.length; i++) {
 			palindrome.Enqueue(ch1[i]);
 		}
 		
+		//Dequeue All Element in the Queue and Store it in String variable
 		for (int j = 0; j < ch2.length; j++) {
 			ch2[j] = palindrome.Dequeue();
 			result = ch2[j] + result;
 		}
 		
-		boolean status = input.equalsIgnoreCase(result);
+		boolean status = Input.equalsIgnoreCase(result);
 		
 		if(status) {
 			System.out.println(status);

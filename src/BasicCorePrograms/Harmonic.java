@@ -11,6 +11,7 @@ public class Harmonic {
 		System.out.println("Enter the Limit: ");
 		int number = Scanner.nextInt();
 		
+		//Calculate Expression from number to 1
 		while(number >0) {
 			harmonic = harmonic + (double)1/number;
 			number--;

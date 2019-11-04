@@ -46,7 +46,7 @@ public class Utility {
 	/**
 	 * @return return Float input
 	 */
-	public double readFloat()
+	public float readFloat()
 	{
 		return sc.nextFloat();
 	}
@@ -56,7 +56,7 @@ public class Utility {
 	/**
 	 * @return return Long input
 	 */
-	public double readLong()
+	public long readLong()
 	{
 		return sc.nextLong();
 	}

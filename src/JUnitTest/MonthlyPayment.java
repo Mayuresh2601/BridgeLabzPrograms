@@ -8,16 +8,17 @@ public class MonthlyPayment {
 
 	public static void main(String[] args) {
 		
-		Utility u = new Utility();
-		Scanner sc = new Scanner(System.in);
+		Utility utility = new Utility();
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the Principal Value: ");
-		int P = sc.nextInt();
+		int P = scanner.nextInt();
 		System.out.println("Enter the No. of Years: ");
-		int Y = sc.nextInt();
+		int Y = scanner.nextInt();
 		System.out.println("Enter the Rate of interest: ");
-		int R = sc.nextInt();
+		int R = scanner.nextInt();
 		
-		u.monthlyPay(P, Y, R);
+		//Calling Utility Package
+		utility.monthlyPay(P, Y, R);
 
 	}
 

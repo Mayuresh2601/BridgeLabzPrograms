@@ -8,11 +8,13 @@ public class SquareRoot {
 	
 	public static void main(String[] args) {
 	
-		Utility u = new Utility();
+		Utility utility = new Utility();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter any Non-negative Integer or else we will convert it for you");
-		int  c = sc.nextInt();
-		u.sqrt(Math.abs(c));
+		int number = sc.nextInt();
+		
+		//Calling Utility Package
+		utility.sqrt(Math.abs(number));
 		
 	}
 }

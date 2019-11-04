@@ -46,48 +46,51 @@ public class Paranthesis {
 
 	public static void main(String[] args) {
 		
-	Paranthesis p = new Paranthesis(12);
-	Scanner sc = new Scanner(System.in);
-	System.out.println("Enter the expression: ");
-	String str = sc.next();
-	char ch[] = str.toCharArray();
-	for (int i = 0; i < ch.length; i++) {
-		switch(ch[i]) {
-		case '{':
-			p.push('{');
-			break;
+		Paranthesis p = new Paranthesis(12);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the expression: ");
+		String str = sc.next();
+		
+		//Convert the Expression into character Array
+		char ch[] = str.toCharArray();
+		
+		for (int i = 0; i < ch.length; i++) {
+			switch(ch[i]) {
+			case '{':
+				p.push('{');
+				break;
+				
+			case '(':
+				p.push('(');
+				break;
+				
+			case '[':
+				p.push('[');
+				break;
+				
+			case '}':
+				p.pop();
+				break;
+				
+			case ')':
+				p.pop();
+				break;
+				
+			case ']':
+				p.pop();
+				break;
+			}
 			
-		case '(':
-			p.push('(');
-			break;
-			
-		case '[':
-			p.push('[');
-			break;
-			
-		case '}':
-			p.pop();
-			break;
-			
-		case ')':
-			p.pop();
-			break;
-			
-		case ']':
-			p.pop();
-			break;
 		}
 		
-	}
-	
-	if(p.isEmpty()) {
-		System.out.println("The Expression "+ str +" is Balanced");
-	}
-	else {
-		System.out.println("The Expression "+ str +" is Not Balanced");
-	}
-	
+		if(p.isEmpty()) {
+			System.out.println("The Expression "+ str +" is Balanced");
+		}
+		else {
+			System.out.println("The Expression "+ str +" is Not Balanced");
+		}
+		
+
+		}
 
 	}
-
-}
