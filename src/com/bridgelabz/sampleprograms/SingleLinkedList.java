@@ -1,5 +1,10 @@
 package com.bridgelabz.sampleprograms;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Create a Generic Single Linked List
+ */
+
 public class SingleLinkedList<T> {
 	
 	public Node<T> head;

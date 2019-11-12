@@ -1,8 +1,12 @@
 package com.bridgelabz.sampleprograms;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to perform logic on Vending Machine
+ */
 
 public class VendingMaching {
 

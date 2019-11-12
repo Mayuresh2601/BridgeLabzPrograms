@@ -1,5 +1,10 @@
 package com.bridgelabz.sampleprograms;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to create a generic double linked list
+ */
+
 public class DoubleLinkedList<T> {
 	
 	private Node<T> head;

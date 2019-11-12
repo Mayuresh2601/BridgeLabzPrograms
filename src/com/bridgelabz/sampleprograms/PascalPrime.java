@@ -1,5 +1,10 @@
 package com.bridgelabz.sampleprograms;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to print the prime numbers in the pascals triangle
+ */
+
 public class PascalPrime {
 
 	public static void main(String[] args) {

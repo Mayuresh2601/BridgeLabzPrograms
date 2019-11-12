@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import com.bridgelabz.utilitypackage.Utility;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to find the monthly payment of a perticular member
+ */
+
 public class MonthlyPayment {
 
 	public static void main(String[] args) {

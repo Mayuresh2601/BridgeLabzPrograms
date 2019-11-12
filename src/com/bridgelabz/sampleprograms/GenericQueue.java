@@ -2,7 +2,7 @@ package com.bridgelabz.sampleprograms;
 
 /**
  * @author Mayuresh Sunil Sonar
- * Purpose: Write a program to 
+ * Purpose: Write a program to create a generic queue.
  */
 
 public class GenericQueue<T extends Object> {

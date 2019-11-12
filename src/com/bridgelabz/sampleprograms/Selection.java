@@ -2,6 +2,11 @@ package com.bridgelabz.sampleprograms;
 
 public class Selection {
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to perform Selection Sort on the given Array
+ */
+
 	public static void main(String[] args) {
 		
 	int temp = 0;

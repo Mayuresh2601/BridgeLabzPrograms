@@ -1,5 +1,10 @@
 package com.bridgelabz.sampleprograms;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to perform Insertion Sorting on the given array
+ */
+
 public class Insertion {
 
 	public static void main(String[] args) {

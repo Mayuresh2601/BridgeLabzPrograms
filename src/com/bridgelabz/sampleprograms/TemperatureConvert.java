@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import com.bridgelabz.utilitypackage.Utility;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to convert the temperature in Fahrenheit or Celsius
+ */
+
 public class TemperatureConvert {
 
 	public static void main(String[] args) {

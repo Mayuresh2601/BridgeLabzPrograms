@@ -1,5 +1,10 @@
 package com.bridgelabz.sampleprograms;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to find the second largest number in the given array
+ */
+
 public class SecondLarge {
 
 	public static void main(String[] args) {

@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import com.bridgelabz.utilitypackage.Utility;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to find the Square Root of the given Number
+ */
+
 public class SquareRoot {
 	
 	public static void main(String[] args) {

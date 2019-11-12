@@ -2,6 +2,11 @@ package com.bridgelabz.sampleprograms;
 
 import java.util.Stack;
 
+/**
+ * @author Mayuresh Sunil Sonar
+ * Purpose: Write a program to reverse each string in a sentence using Stack
+ */
+
 public class StringReverse {
 
 	public static void main(String[] args) {
